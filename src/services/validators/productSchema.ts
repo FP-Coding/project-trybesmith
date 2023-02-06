@@ -8,9 +8,7 @@ const productSchemama = Joi.object({
 
 const validateProduct = (product: IProduct) => {
   const { error } = productSchemama.validate(product);
-  console.log(error?.message);
   if (error) return { type: 422, message: error.message };
-  
   return { type: null, message: '' }; 
 };
 
