@@ -1,11 +1,11 @@
 import IProduct from '../interfaces/products';
 
-const createPlaceholders = (newProduct: IProduct): [string, string[]] => {
+const createPlaceholders = (newProduct: IProduct): [string, string] => {
   const placeholders: string = Object.keys(newProduct).map((_item: string) => '?').join(', ');
 
-  const values: string[] = Object.values(newProduct);
+  const columns: string = Object.keys(newProduct).join(', ');
 
-  return [placeholders, values];
+  return [columns, placeholders];
 };
 
 export default createPlaceholders;
