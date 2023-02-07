@@ -16,6 +16,11 @@ export const generateToken = (payload: IUser): string => {
   return token;
 };
 
+export const decodeToken = (token: string) => {
+  const object = jwt.decode(token);
+  return object;
+};
+
 export const verifyToken = (token: string) => {
   try {
     return jwt.verify(token, SECRET);
